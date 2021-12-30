@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import backref
 from datetime import datetime
@@ -62,8 +62,9 @@ class Fees(db.Model):
     stu_id=db.Column(db.Integer,db.ForeignKey('student.sid'), nullable=False)
 
 @app.route('/')
+@app.route('/home')
 def hello():
-    return 'Hello, World!'
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
