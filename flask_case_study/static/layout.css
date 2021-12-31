@@ -45,3 +45,8 @@ img{
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
+
+.loginpage{
+  margin-left: 250px;
+  margin-right: 500px;
+}

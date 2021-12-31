@@ -1,14 +1,12 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import backref
 from datetime import datetime
+from flask_case_study import db, login_manager
+from flask_login import UserMixin
 
-app = Flask(__name__)
-app.config['SECRET_KEY']='ff16b64ba5074f994657e6abb2fe9470'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///school.db'
-db=SQLAlchemy(app)
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id=db.Column(db.Integer, primary_key=True, autoincrement=True)
     username=db.Column(db.String(20), unique=True, nullable=False)
     email=db.Column(db.String(120), unique=True, nullable=False)
@@ -17,7 +15,7 @@ class User(db.Model):
     students=db.relationship('Student', backref='is_student',lazy=True)
     
     def __repr__(self):
-        return f"User('{self.id}','{self.username}','{self.email}')"
+        return f"User('{self.id}','{self.username}','{self.email}','{self.user_type}')"
 
 class Student(db.Model):
     sid=db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -60,11 +58,3 @@ class Fees(db.Model):
     last_paid=db.Column(db.DateTime, nullable=False, default=datetime.now)
     status=db.Column(db.String(15), nullable=False)
     stu_id=db.Column(db.Integer,db.ForeignKey('student.sid'), nullable=False)
-
-@app.route('/')
-@app.route('/home')
-def hello():
-    return render_template('home.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)

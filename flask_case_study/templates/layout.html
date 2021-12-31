@@ -17,9 +17,17 @@
 <nav class="navbar navbar-dark bg-dark mt-0">
     <div class="navb">
         <img src="{{ url_for('static',filename='logo.png') }} " alt="School logo" >
-        <a class="navbar-brand custom " href="#">School Name</a>
+        <a class="navbar-brand custom " href="redirect(url_for('home'))">School Name</a>
     </div>
-  
+    <div class="navbar-nav"style="margin-right: 10px;">
+      {% if current_user.is_authenticated %}
+        
+        <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+        
+      {% endif %}
+      </div>
   </nav>
     
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse custom2 ">
