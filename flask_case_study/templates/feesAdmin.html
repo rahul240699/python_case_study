@@ -1,0 +1,54 @@
+{% extends "layoutAdmin.html" %}
+{% block content %}
+
+<div class="displayprop">
+<h1>Admin Fees Page! </h1>
+<table>
+    <tr>
+        <th>
+            Student ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Fees Due
+        </th>
+        <th>
+            Due Date
+        </th>
+        <th>
+            Status
+        </th>
+    </tr>
+    {% for post in posts%}
+    <tr>
+        <td>
+            {{post.Sid}}
+        </td>
+        <td>
+            {{ post.Name }}
+        </td>
+        <td>
+            {{ post.Class }}
+        </td>
+        <td>
+            {{ post.amt }}
+        </td>
+        <td>
+            {{ post.due_date }}
+        </td>
+        <td>
+            {{ post.status }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+    
+</div>
+
+{% endblock content%}
