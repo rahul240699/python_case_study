@@ -17,8 +17,9 @@
 <nav class="navbar navbar-dark bg-dark mt-0">
     <div class="navb">
         <img src="{{ url_for('static',filename='logo.png') }} " alt="School logo" >
-        <a class="navbar-brand custom " href="{{ url_for('home') }}">School Name</a>
+        <a class="navbar-brand custom " href="#">School Name</a>
     </div>
+
     <div class="navbar-nav"style="margin-right: 10px;">
       {% if current_user.is_authenticated %}
         
@@ -28,29 +29,30 @@
         
       {% endif %}
       </div>
+  
   </nav>
     
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse custom2 ">
     <div class="position-sticky ">
       <div class="list-group list-group-flush mx-3 ">
         <a
-          href="#"
+          href="/"
           class="list-group-item list-group-item-action py- ripple pt-3 pb-3 custom2"
           aria-current="true"
         >
           <i class="fas fa-tachometer-alt fa-fw custom2 me-2 pb-3"></i><span>Home</span>
         </a>
         <a href="#" class="list-group-item list-group-item-action py-2 ripple pt-3 pb-3 custom2">
-          <i class="fas fa-chart-area fa-fw me-2 "></i><span>Option 1</span>
+          <i class="fas fa-chart-area fa-fw me-2 "></i><span>Enroll Student</span>
         </a>
         <a href="#" class="list-group-item list-group-item-action py-2 ripple  pt-3 pb-3 custom2"
-          ><i class="fas fa-lock fa-fw me-2 "></i><span>Option 2</span></a
+          ><i class="fas fa-lock fa-fw me-2 "></i><span>Class Details</span></a
         >
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple  pt-3 pb-3 custom2"
-          ><i class="fas fa-chart-line fa-fw me-2 "></i><span>Option 3</span></a
+        <a href="{{ url_for('adminFees') }}" class="list-group-item list-group-item-action py-2 ripple  pt-3 pb-3 custom2"
+          ><i class="fas fa-chart-line fa-fw me-2 "></i><span>Fee Status</span></a
         >
         <a href="#" class="list-group-item list-group-item-action py-2 ripple  pt-3 pb-3 custom2">
-          <i class="fas fa-chart-pie fa-fw me-2"></i><span>Option 4</span>
+          <i class="fas fa-chart-pie fa-fw me-2"></i><span>Events</span>
         </a>
         
         

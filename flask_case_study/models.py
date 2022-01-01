@@ -34,7 +34,7 @@ class Student(db.Model):
     Fees=db.relationship('Fees',backref='Fee_Payment',lazy=True)
 
     def __repr__(self):
-        return f"Student('{self.sid}','{self.Name}','{self.cid}')"
+        return f"Student('{self.sid}','{self.Name}','{self.cid}','{self.user_email}')"
 
 class Events(db.Model):
     eid=db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -65,7 +65,7 @@ class Fees(db.Model):
     stu_id=db.Column(db.Integer,db.ForeignKey('student.sid'), nullable=False)
 
     def __repr__(self):
-        return f"Fees('{self.f_id}','{self.cid}','{self.stu_id}')"
+        return f"Fees('{self.f_id}','{self.cid}','{self.stu_id}',,'{self.amount}','{self.Due_date}','{self.status}')"
     
 
 class Class_(db.Model):

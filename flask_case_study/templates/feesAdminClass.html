@@ -1,0 +1,19 @@
+{% extends "layoutAdmin.html" %}
+{%block content%}
+    <div class="content-section displayprop">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Class Select</legend>
+                
+                <div class="form-gorup">
+                    {{ form.classVal.label(class="form-control-label") }}
+                    {{ form.classVal(class="form-control form-control-lg") }}                  
+                </div>
+            </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+                
+    </div>
+{%endblock%}
