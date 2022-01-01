@@ -17,7 +17,7 @@
 <nav class="navbar navbar-dark bg-dark mt-0">
     <div class="navb">
         <img src="{{ url_for('static',filename='logo.png') }} " alt="School logo" >
-        <a class="navbar-brand custom " href="redirect(url_for('home'))">School Name</a>
+        <a class="navbar-brand custom " href="{{ url_for('home') }}">School Name</a>
     </div>
     <div class="navbar-nav"style="margin-right: 10px;">
       {% if current_user.is_authenticated %}

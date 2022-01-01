@@ -22,7 +22,7 @@ def login():
             login_user(user)
             if user.user_type =='Admin':
                 return redirect(url_for('admin'))
-            elif user.user_type =='student':
+            elif user.user_type =='Student':
                 return redirect(url_for('student'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
