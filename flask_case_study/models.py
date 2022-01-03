@@ -40,8 +40,8 @@ class Events(db.Model):
     eid=db.Column(db.Integer, primary_key=True, autoincrement=True)
     e_name=db.Column(db.String(30), nullable=False)
     description=db.Column(db.Text, nullable=False)
-    date_of_event=db.Column(db.String(30), nullable=False)
-    status=db.Column(db.String(30), nullable=False)
+    date_of_event=db.Column(db.DateTime, nullable=False)
+    #status=db.Column(db.String(30), nullable=False)
     participants=db.relationship('E_registration',backref='part_taken',lazy=True)
     
     

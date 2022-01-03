@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutLogin.html" %}
 {% block content %}
 <div class="loginpage">
     <div class="content-section">
@@ -33,15 +33,13 @@
                         {{ form.password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div class="form-check">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
-                </div>
             </fieldset>
+            <br>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-primary") }}
             </div>
         </form>
+        <br>
         <div class="border-top pt-3">
             <small class="text-muted ml-2">
                 <a href="#" class="ml-2">Forgot Password?</a>

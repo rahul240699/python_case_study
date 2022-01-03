@@ -1,0 +1,44 @@
+{% extends "layoutAdmin.html" %}
+{% block content %}
+
+<div class="content-section form displayprop">
+    <br>
+    <br>
+    <br>
+   <h1 class="createevent">Create New Event</h1>
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <fieldset class="form-group">
+        <div class="form-group m-3">
+          {{ form.EventName.label(class="form-control-label p-1")}}
+          {{ form.EventName(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group m-3">
+          {{ form.EventDescription.label(class="form-control-label p-1")}}
+          {{ form.EventDescription(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group m-3">
+          {{ form.EventDate.label(class="form-control-label p-1")}}
+          {{ form.EventDate(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group m-3">
+          {{form.submit(class="btn bg-dark text-light btn-outline-info p-2 border-light")}}
+        </div>
+      </fieldset>
+      </form>
+     <P>
+         FSDKLAFLSKADFJLS;AKDFJLS
+         SDALKFMSALDKF
+         ]LSDKFMSALDKF.M
+         SADJKFNSADLFN,
+         SAKJDFN,SADJKFNSADLFNSLDAFNSA,IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, debitis tempore. Quae, blanditiis magni? Distinctio culpa alias eos aspernatur fugit laudantium ipsam ipsum voluptatem enim. Facere atque quidem ullam nihil.
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. At, numquam quia dolorem, eum dolores excepturi aperiam cum blanditiis, quos ea cumque pariatur nulla dolor voluptates ipsam. Nemo earum vel quasi?
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, praesentium exercitationem voluptatum quibusdam voluptate soluta libero eligendi ut qui autem quae amet suscipit pariatur laudantium eos quos inventore temporibus eius?
+         Lorem
+         ;<KSFMDA>
+         <div class="MV"></div>
+     </P>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends "layoutAdmin.html" %}
+{% block content %}
+
+<div class="displayprop">
+<h1 class="text-center">Class Details</h1>
+<br>
+
+    {% if posts[0] %}
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">Mother Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            </tr>
+        </thead>
+        
+        {% for user in posts %}
+        <tbody>
+            <tr>
+                <td scope="row">{{ user.Name }}</td>
+                <td>{{ user.FName }}</td>
+                <td>{{ user.MName }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.p_email }}</td>
+              </tr>
+        </tbody>
+        
+        
+      {% endfor %}
+    </table>
+    <br>
+    {% else %}
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Father Name</th>
+                <th scope="col">Mother Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email</th>
+                </tr>
+            </thead>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td class="table-danger" colspan="6">
+                    NO STUDENTS!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+    
+</div>
+
+{% endblock content%}

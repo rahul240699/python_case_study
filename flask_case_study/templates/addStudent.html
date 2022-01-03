@@ -1,0 +1,83 @@
+{% extends "layoutAdmin.html" %}
+{% block content %}
+<div class="displayprop">
+    <div class="content-section">
+        <form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom-mb-4" >
+					Student Data Entry
+				</legend>
+				<div class="form-group">
+                    {{ form.name.label(class="form-control-label") }}
+                    {% if form.name.errors %}
+                    {{ form.name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                        {{ form.name(class="form-control form-control-mb ") }}
+                    {% endif %}
+                </div>
+				<div class="form-group row">
+					<div class="col">
+					{{ form.fname.label(class="form-control-label") }}
+					{{ form.fname(class="form-control form-control-mb") }}
+					</div>
+					
+					<div class="col">
+					{{ form.mname.label(class="form-control-label") }}
+					{{ form.mname(class="form-control form-control-mb") }}
+					</div>
+				</div>
+				<div class="form-group row">
+				<div class="col" placeholder="Enter Student's class">
+					{{ form.classs.label(class="form-control-label") }}
+					{{ form.classs(class="form-control form-control-mb") }}
+				</div>
+				
+				<div class="col">
+					{{ form.phno.label(class="form-control-label") }}
+					{{ form.phno(class="form-control form-control-mb") }}
+				</div>
+			</div>
+				<div class="form-group">
+					{{ form.addr.label(class="form-control-label") }}
+					{{ form.addr(class="form-control form-control-mb",style="width:400px") }}
+				</div>
+				<div class="form-group">
+					{{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					{{ form.email(class="form-control form-control-mb",style="width:400px") }}
+					{% endif %}
+				</div>
+                <div class="form-group">
+                    {{ form.person_email.label(class="form-control-label") }}
+                    {% if form.person_email.errors %}
+                    {{ form.person_email(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid">
+                        {% for error in form.person_email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                        {{ form.person_email(class="form-control form-control-mb",style="width:400px") }}
+                    {% endif %}
+                </div>
+			</fieldset>
+			<div class="form-group">
+                <br>
+				{{ form.submit(class="btn btn-primary") }}
+			</div>	
+    </div>
+</div>
+{% endblock content %}

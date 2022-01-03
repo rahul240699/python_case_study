@@ -53,3 +53,12 @@ def updateFeesStudent(userVal):
         db.session.add(fee)
         db.session.commit()
     return
+
+def queryEmails(classData):
+    fees = Fees.query.filter_by(status='Pending',cid=classData).all()
+    data = []
+    for fee in fees:
+        details = Student.query.filter_by(sid=fee.stu_id).first()
+        data.append(details.user_email)
+
+    return data

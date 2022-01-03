@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% if current_user.user_type == 'Admin'%}
+{% extends "layoutAdmin.html" %}
+{% else %}
+{% extends "layoutStudent.html" %}
+{% endif %}
 {% block content %}
 <h1>Home Page!</h1>
 {% endblock content %}
