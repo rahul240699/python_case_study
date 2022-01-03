@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content-section form">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <fieldset class="form-group">
+        <div class="form-group m-3">
+          {{ form.EventName.label(class="form-control-label p-1")}}
+          {{ form.EventName(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group m-3">
+          {{ form.EventDescription.label(class="form-control-label p-1")}}
+          {{ form.EventDescription(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group m-3">
+          {{ form.EventDate.label(class="form-control-label p-1")}}
+          {{ form.EventDate(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group m-3">
+          {{form.submit(class="btn btn-outline-info p-1")}}
+        </div>
+      </fieldset>
+      </form>
+     
+</div>
+
+{% endblock content %}

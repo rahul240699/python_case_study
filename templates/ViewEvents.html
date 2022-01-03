@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="center">
+<center>
+    <h1>EVENTS</h1>
+</center>
+<!-- <h1>{{Events}}</h1> -->
+{% for event in Events%}
+  
+  {%if event.date_of_event>today%}
+    <div class="event-container">
+    <div class="event">
+        
+        <div class="event-left">
+        <div class="event-date">
+            <h3 class="year">{{event.date_of_event.year}}</h3>
+            <div class="date">{{event.date_of_event.day}}</div>
+            <div class="month">{{event.date_of_event.strftime("%B")}}</div>
+        </div>
+        </div>
+
+        <div class="event-center">
+        <h3 class="event-right ">{{event.e_name}}</h3>
+        <div class="event-description">
+            {{event.description}}
+        </div>
+        </div>
+
+        <div class="event-timing">
+           <button class="register bg-dark" value="{{event.eid}}">Register</button> 
+        </div>
+    </div> 
+    {% endif%}
+  {% endfor %}  <!-- end of 1st event -->
+
+</div> <!-- end of container -->
+
+{% endblock content %}
