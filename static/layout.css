@@ -24,8 +24,11 @@ img{
 }
 
  .form{
-    margin-left: 60%;
-    margin-top: 35%;
+    margin-left: 55%;
+    margin-top: 25%;
+ }
+ .createevent{
+   padding:20px;
  }
  /* Sidebar */
  .sidebar {

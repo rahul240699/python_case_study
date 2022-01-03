@@ -1,7 +1,6 @@
 from flask import Flask, render_template, url_for,flash,redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import backref
-from sqlalchemy import * 
 from datetime import datetime
 from forms import EventForm
 

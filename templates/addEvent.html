@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="content-section form">
+   <h1 class="createevent">Create New Event</h1>
     <form method="POST" action="">
       {{ form.hidden_tag() }}
       <fieldset class="form-group">
@@ -18,7 +19,7 @@
           {{ form.EventDate(class="form-control form-control-lg")}}
         </div>
         <div class="form-group m-3">
-          {{form.submit(class="btn btn-outline-info p-1")}}
+          {{form.submit(class="btn bg-dark text-light btn-outline-info p-2 border-light")}}
         </div>
       </fieldset>
       </form>
