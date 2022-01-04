@@ -4,9 +4,9 @@
 <center>
     <h1>EVENTS</h1>
 </center>
-<!-- <h1>{{Events}}</h1> -->
+
+
 {% for event in Events%}
-  
   {%if event.date_of_event>today%}
     <div class="event-container">
     <div class="event">
@@ -27,7 +27,12 @@
         </div>
 
         <div class="event-timing">
-           <button class="register bg-dark" value="{{event.eid}}">Register</button> 
+          {%if event.eid in RegisteredEvents%}
+           <button class="register bg-dark Registered" value="{{event.eid}}">Registered</button> 
+           {% endif %}
+           {%if event.eid not in RegisteredEvents%}
+           <button class="register bg-dark YetTORegister" value="{{event.eid}}">Register</button> 
+           {% endif %}
         </div>
     </div> 
     {% endif%}

@@ -6,7 +6,7 @@ $(document).ready(function() {
 });
 
 $(function () {
-    $('.register').on('click', function () {
+    $('.YetTORegister').on('click', function () {
         if (confirm("Are you sure!")) {
             var EventId = $(this).val();
         console.log(EventId)
@@ -25,3 +25,4 @@ $(function () {
         
     });
 });
+
