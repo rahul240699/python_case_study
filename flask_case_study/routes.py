@@ -43,7 +43,7 @@ def RegisterEvents():
 def AdminViEvents():
     AllEvent = Events.query.all()
     currentDate = datetime.now()
-    return render_template('adminViEvents.html',Events=AllEvent,today=currentDate)
+    return render_template('adminViEventsrahul.html',Events=AllEvent,today=currentDate)
 
 
 @app.route("/Student/EventIdUpdate",methods=['GET'])
